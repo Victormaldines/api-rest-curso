@@ -1,3 +1,3 @@
 export default {
-  url: 'http://10.0.0.10:3001',
+  url: `${process.env.APP_URL}/${process.env.APP_PORT}`,
 };
