@@ -31,7 +31,6 @@ exports. default = async (req, res, next) => {
 
     req.userId = id;
     req.userEmail = email;
-    console.log('a');
     return next();
   } catch (e) {
     return res.status(400).json({

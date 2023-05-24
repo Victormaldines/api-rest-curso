@@ -44,7 +44,6 @@ class UserController {
       }
 
       const novosDados = await user.update(req.body);
-      console.log(req.body);
       const { id, nome, email } = novosDados;
       return res.json({ id, nome, email });
     } catch (e) {
