@@ -2,6 +2,7 @@
 var _multerConfig = require('../config/multerConfig'); var _multerConfig2 = _interopRequireDefault(_multerConfig);
 
 var _Foto = require('../models/Foto'); var _Foto2 = _interopRequireDefault(_Foto);
+var _Aluno = require('../models/Aluno'); var _Aluno2 = _interopRequireDefault(_Aluno);
 
 const upload = _multer2.default.call(void 0, _multerConfig2.default).single('foto');
 
@@ -17,6 +18,15 @@ class FotoController {
       try {
         const { originalname, filename } = req.file;
         const { id_aluno } = req.body;
+
+        const aluno = await _Aluno2.default.findByPk(id_aluno);
+
+        if (!aluno) {
+          return res.status(400).json({
+            errors: ['Aluno não existe'],
+          });
+        }
+
         const foto = await _Foto2.default.create({ originalname, filename, id_aluno });
 
         return res.json(foto);

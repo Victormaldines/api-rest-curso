@@ -2,6 +2,7 @@ import multer from 'multer';
 import multerConfig from '../config/multerConfig';
 
 import Foto from '../models/Foto';
+import Aluno from '../models/Aluno';
 
 const upload = multer(multerConfig).single('foto');
 
@@ -17,6 +18,15 @@ class FotoController {
       try {
         const { originalname, filename } = req.file;
         const { id_aluno } = req.body;
+
+        const aluno = await Aluno.findByPk(id_aluno);
+
+        if (!aluno) {
+          return res.status(400).json({
+            errors: ['Aluno não existe'],
+          });
+        }
+
         const foto = await Foto.create({ originalname, filename, id_aluno });
 
         return res.json(foto);
