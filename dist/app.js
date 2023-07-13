@@ -13,10 +13,12 @@ var _tokenRoutes = require('./routes/tokenRoutes'); var _tokenRoutes2 = _interop
 var _alunoRoutes = require('./routes/alunoRoutes'); var _alunoRoutes2 = _interopRequireDefault(_alunoRoutes);
 var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopRequireDefault(_fotoRoutes);
 
+// ips que podem acessar a api (Necessário configurar)
 const whiteList = [
-  'http://10.0.0.10',
-  'http://localhost:3000',
-  'http://localhost:3001',
+  // 'http://10.0.0.250',
+  // 'http://10.0.0.10',
+  // 'http://localhost:3000',
+  // 'http://localhost:3001',
 ];
 
 const corsOptions = {

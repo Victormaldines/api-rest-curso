@@ -13,11 +13,12 @@ import tokenRoutes from './routes/tokenRoutes';
 import alunoRoutes from './routes/alunoRoutes';
 import fotoRoutes from './routes/fotoRoutes';
 
+// ips que podem acessar a api (Necessário configurar)
 const whiteList = [
-  'http://10.0.0.250',
-  'http://10.0.0.10',
-  'http://localhost:3000',
-  'http://localhost:3001',
+  // 'http://10.0.0.250',
+  // 'http://10.0.0.10',
+  // 'http://localhost:3000',
+  // 'http://localhost:3001',
 ];
 
 const corsOptions = {
